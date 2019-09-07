@@ -17,21 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-#if DEBUG
-    // we need this to connect with debugger when launching from VSCode
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [Launcher launchFrom:self];
+        [self openFlutter:nil];
     });
-#endif
 }
 
-- (IBAction)showFlutter:(id)sender {
+- (IBAction)openFlutter:(id)sender {
     [Launcher launchFrom:self];
 }
 

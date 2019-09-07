@@ -7,26 +7,12 @@
 //
 
 #import "Launcher.h"
-#include "GeneratedPluginRegistrant.h"
+#import <Flutter/Flutter.h>
 
 @implementation Launcher
 
 + (void)launchFrom:(UIViewController *)parent {
-    static FlutterViewController *vc;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        vc = [FlutterViewController new];
-        [GeneratedPluginRegistrant registerWithRegistry:vc];
-    });
-    
-    if (vc.presentingViewController != nil) {
-        // already visible
-        return;
-    }
-    
-    // TODO: reset to root route
-
-    [parent presentViewController:vc animated:YES completion:nil];
+    [parent presentViewController:[FlutterViewController new] animated:YES completion:nil];
 }
 
 @end

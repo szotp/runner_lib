@@ -1,4 +1,4 @@
-package com.example.flutter_component;
+package com.example.runner_lib;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
