@@ -1,4 +1,6 @@
+flutter packages get
 cd ios
+pod install
 
 xcodebuild \
 CODE_SIGNING_ALLOWED=NO \
